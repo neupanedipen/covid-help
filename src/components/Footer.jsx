@@ -1,9 +1,9 @@
 const Footer = () => {
     return (
-        <footer class="bg-light text-center text-lg-start sticky-bottom">
-            <div class="text-center text-light p-3" style={{backgroundColor: "#212529"}}>
+        <footer className="bg-light text-center text-lg-start sticky-bottom">
+            <div className="text-center text-light p-3" style={{backgroundColor: "#212529"}}>
                 © 2021 Copyright: 
-                <a class="text-light" href="/">Covid Help Nepal</a>
+                <a className="text-light" href="/">Covid Help Nepal</a>
             </div>
         </footer>
     )
