@@ -53,7 +53,10 @@ const GetHelp = (props) => {
             category: value,
             details            
         })
-        .then(response => console.log(response))
+        .then(response => {
+            console.log(response);
+            props.history.push('/')
+        })
         .catch(err => console.log(err))        
     }
     return (

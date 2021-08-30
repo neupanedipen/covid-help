@@ -49,7 +49,7 @@ const [offers, setOffer] = useState([]);
                   <td>{person.category}</td>
                   <td>{person.address}</td>
                   <td>{person.contactNumber}</td>
-                  <td><button className="btn btn-primary"><Link className="text-light offerBtn" to={{pathname: `/req-details/${person._id}`}}>Offer Help</Link></button></td>
+                  <td><button className="btn btn-primary"><Link className="text-light offerBtn" to={{pathname: `/req-details/${person._id}`}}>View Request</Link></button></td>
                   {/* <a href="/offer-help" className="text-light offerBtn"></a> */}
                 </tr>
                 )

@@ -5,7 +5,7 @@ import Footer from "./Footer"
 import Hero from "./Hero"
 import Navbar from "./Navbar"
 
-const OfferHelp = () => {
+const OfferHelp = (props) => {
 
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -24,7 +24,10 @@ const OfferHelp = () => {
             category: value,
             details            
         })
-        .then(response => console.log(response))
+        .then(response => {
+            console.log(response)
+            props.history.push('/')
+        })
         .catch(err => console.log(err))        
     }
 
