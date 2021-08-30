@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react';
 import axios from 'axios';
+import {Link} from 'react-router-dom'
 import Navbar from './Navbar';
 import Hero from './Hero';
 import Footer from './Footer';
@@ -48,7 +49,8 @@ const [offers, setOffer] = useState([]);
                   <td>{person.category}</td>
                   <td>{person.address}</td>
                   <td>{person.contactNumber}</td>
-                  <td><button className="btn btn-primary"><a href="/offer-help" className="text-light offerBtn">Offer Help</a></button></td>
+                  <td><button className="btn btn-primary"><Link className="text-light offerBtn" to={{pathname: `/req-details/${person._id}`}}>Offer Help</Link></button></td>
+                  {/* <a href="/offer-help" className="text-light offerBtn"></a> */}
                 </tr>
                 )
               })
@@ -81,7 +83,7 @@ const [offers, setOffer] = useState([]);
                   <td>{offer.category}</td>
                   <td>{offer.address}</td>
                   <td>{offer.contactNumber}</td>
-                  <td><button className="btn btn-primary"><a href="/offer-help" className="text-light offerBtn">View Offer</a></button></td>
+                  <td><button className="btn btn-primary"><Link to={{pathname: `/offer-details/${offer._id}`}} className="text-light offerBtn">View Offer</Link></button></td>
                 </tr>
                 )
               })
