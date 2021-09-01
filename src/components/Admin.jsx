@@ -34,7 +34,7 @@ const Admin = (props) => {
             // setUserSession(res.data.token, res.data.publicProfile);
             localStorage.setItem('token', res.data.token)
             localStorage.setItem('_id', res.data.publicProfile._id)
-
+            window.location.reload();
         })
             .catch((error) => {
                 console.log(error);
@@ -45,13 +45,23 @@ const Admin = (props) => {
         setPassword("");
 
     }
+
+    const handleLogout=()=>{
+        localStorage.clear()
+        window.location.reload()
+        // this.setState({ state: this.state });
+        // this.forceUpdate()
+    }
     return (
         <>
             <Navbar/>        
             <div className="container my-5">
                {
                    (user) ? (
-                       <h2>You are already logged in as Admin. Enjoy the privileges!</h2>
+                       <div className="text-center">
+                           <h2>You are already logged in as Admin. Enjoy the privileges!</h2>
+                           <button className="btn btn-danger" onClick={handleLogout}>Log Out</button>
+                       </div>
                    ):(
                        <div className="loginForm">
                             <form className="signinForm" onSubmit={handleSubmit}>

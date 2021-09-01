@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import { Switch, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
@@ -13,6 +13,17 @@ import UpdateDetails from './components/UpdateForm';
 import UpdateOffer from './components/UpdateOffer';
 
 function App() {
+  const [user, setUser] = useState(null);
+
+   useEffect(() => {
+        const config = {
+            params: {
+                _id: localStorage.getItem('_id')
+            }
+        }
+        console.log(config.params._id)
+        setUser(config.params._id);
+    }, [])
   return (
     <>
       <Switch>
@@ -22,8 +33,12 @@ function App() {
                 <Route path="/admin" component={Admin} />
                 <Route path="/req-details/:id" component={DisplayDetails} />
                 <Route path="/offer-details/:id" component={OfferDetails} />
-                <Route path="/offer-update/:id" component={UpdateOffer} />
-                <Route path="/update/:id" component={UpdateDetails} />
+                {(user) && (
+                <>
+                  <Route path="/offer-update/:id" component={UpdateOffer} />
+                  <Route path="/update/:id" component={UpdateDetails} />
+                </>
+                )}
                 <Route component={ErrorPage} />
       </Switch>
     </>    
