@@ -27,3 +27,8 @@ a.offerBtn {
 button.btn.btn-link-color {
   color: white;
 }
+
+.about-description {
+  margin: 60px 0;
+  font-size: 17px;
+}

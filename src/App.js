@@ -11,6 +11,7 @@ import ErrorPage from './components/404';
 import OfferDetails from './components/OfferDetails';
 import UpdateDetails from './components/UpdateForm';
 import UpdateOffer from './components/UpdateOffer';
+import About from './components/About';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -33,6 +34,7 @@ function App() {
                 <Route path="/admin" component={Admin} />
                 <Route path="/req-details/:id" component={DisplayDetails} />
                 <Route path="/offer-details/:id" component={OfferDetails} />
+                <Route path="/about" component={About} />
                 {(user) && (
                 <>
                   <Route path="/offer-update/:id" component={UpdateOffer} />
@@ -40,6 +42,7 @@ function App() {
                 </>
                 )}
                 <Route component={ErrorPage} />
+                
       </Switch>
     </>    
   );
